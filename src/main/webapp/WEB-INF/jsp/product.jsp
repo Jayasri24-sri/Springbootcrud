@@ -7,7 +7,7 @@
     <title>Product List</title>
 </head>
 <body>
-<h1>Products List</h1>
+<h1>Product List</h1>
 
 <table border="1">
     <tr>
