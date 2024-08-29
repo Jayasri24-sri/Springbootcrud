@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Products List</title>
+    <title>Product List</title>
 </head>
 <body>
 <h1>Product List</h1>
