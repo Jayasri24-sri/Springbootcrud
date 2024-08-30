@@ -16,6 +16,28 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+    @GetMapping("/view")
+    public ModelAndView viewProducts() {
+        List<Product> products = productService.getAllProducts();
+        ModelAndView modelAndView = new ModelAndView("product"); // Name of the JSP file without .jsp extension
+        modelAndView.addObject("products", products);
+        return modelAndView;
+    }
+
+    @GetMapping("/create")
+    public ModelAndView showCreateProductForm() {
+        return new ModelAndView("product-form"); // Name of the JSP file for the form
+    }
+
+    @PostMapping("/create")
+    public String createProduct(@RequestParam("name") String name, @RequestParam("price") double price) {
+        Product product = new Product();
+        product.setName(name);
+        product.setPrice(price);
+        productService.createProduct(product);
+        return "redirect:/products/view"; // Redirect to view all products after creation
+    }
+
 
     @GetMapping
     public List<Product> getAllProducts() {
