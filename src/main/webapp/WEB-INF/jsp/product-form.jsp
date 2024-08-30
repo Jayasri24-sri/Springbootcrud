@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Create Product</h1>
-<form action="/create" method="post">
+<form action="/view" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required><br><br>
 
